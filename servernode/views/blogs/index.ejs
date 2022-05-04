@@ -1,0 +1,50 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  
+
+  <div class="blogs content">
+    <h2>All Blogs</h2>
+    
+    <div class="form">
+
+      <form action="/blogs/search" method="POST">
+          <input type="text" id="search-box" name="searchKeyword" class="form-control searchbar" placeholder="Search Blogs">
+          <span class="deleteAll" data-doc="<%= blogs._id %>">Delete All</span>
+      </form>
+  </div>
+
+    <% if (blogs.length > 0) { %>
+      <% blogs.forEach(blog => { %>
+        <a class="single" href="/blogs/<%= blog._id %>">
+          <h3 class="title"><%= blog.title %></h3>
+          <p class="snippet"><%= blog.snippet %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no blogs to display...</p>
+    <% } %>
+    
+  </div>
+  <!-- FOOTER -->
+  <%- include("../partials/footer.ejs") %>
+
+  <!-- SCRIPT -->
+  <script>
+    const trashcanAll = document.querySelector('span.deleteAll');
+    trashcanAll.addEventListener('click', (e) =>{
+      const endpoint = `/blogs/${trashcanAll.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+  </script>
+
+</body>
+</html>

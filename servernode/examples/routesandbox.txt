@@ -1,0 +1,45 @@
+// mongoose and mongo sandbox routes
+app.get('/add-blog', (req, res) => {
+    const blog = new Blog({
+        title: 'singapore Trip', 
+        snippet: 'trippings sa SG',
+        body: 'saya saya sa SG dami pinoy',
+        author: 'Mark Ramirez'
+    });
+
+    blog.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+});
+
+app.get('/all-blogs', (req, res) => {
+    Blog.find()
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+});
+
+app.get('/single-blog', (req, res) => {
+    Blog.findById('623afe464157ab13af30a642')
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+});
+
+//examples
+const blogs = [
+    {title: 'Toradora', snippet: 'wkwkwkwkwkwkkwkwkwkwkw'},
+    {title: 'Tokyo Revengers', snippet: 'wkwkwkwkwkwkkwkwkwkwkw'},
+    {title: 'Attack on Titan', snippet: 'wkwkwkwkwkwkkwkwkwkwkw'}
+];
+res.render('index', {title: 'Home', blogs});

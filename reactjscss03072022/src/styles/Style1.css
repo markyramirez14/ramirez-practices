@@ -1,0 +1,90 @@
+/* navbar */
+.navbar{
+    background-color: #FFCBC1;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+.nav-item{
+    padding: 20px;
+}
+.nav-item:hover{
+    font-weight: 600;
+    transition: 0.5s;
+}
+.navbar-brand:hover {
+    font-weight: 600;
+    transition: 0.5s;
+}
+/* navbar */
+.page-footer{
+    background-color: #FFCBC1;
+    font-size: 20px;
+    font-weight: 400;
+}
+/* Body */
+p{
+    font-size: 20px;
+}
+
+/* card */
+.card{
+margin: auto;
+border: 3px solid black;
+margin-top: 15px;
+width: 40%;
+height: auto;
+
+}
+.section1 .card:hover{
+    width: 41%;
+    border: 5px white solid;
+    box-shadow: 10px 10px #070707;
+    transition: 0.5s;
+}
+/* Homepage */
+.jumbotron img{
+    width: 75%;
+    height: auto;
+    
+}
+.jumbotron h1{
+    text-align: center;
+    text-justify: auto;
+    margin: 2%;
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+}
+.jumboP{
+    text-align: justify;
+    font-weight: 400;
+}
+
+/* Saturday */
+.section1 {
+    background-color: lightblue;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+.section1 h1{
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+}
+/* Sunday */
+.section2 {
+    background-color: lightcoral;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+.section2 h1{
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+}
+.section2 .card:hover{
+    width: 41%;
+    border: 5px white solid;
+    box-shadow: 10px 10px #070707;
+    transition: 0.5s;
+}
